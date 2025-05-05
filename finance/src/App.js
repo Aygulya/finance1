@@ -113,7 +113,7 @@ function App() {
 
   return (
     <FinanceProvider>
-      <Router>
+      <>
         <Layout style={{ minHeight: '100vh' }}>
           <AppHeader onMenuClick={toggleDrawer} />
 
@@ -171,7 +171,7 @@ function App() {
             </Content>
           </Layout>
         </Layout>
-      </Router>
+      </>
     </FinanceProvider>
   );
 }
