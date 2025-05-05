@@ -138,9 +138,8 @@ function App() {
 
           <Layout style={{ padding: '16px' }}>
             <Content>
-              <Routes>
-                {/* Если пользователь не авторизован, перенаправляем на страницу регистрации/входа */}
-                {!user ? (
+              {/* <Routes>
+                
                   <Route path="/" element={<FirstPage />} />
                 ) : (
                   <>
@@ -152,7 +151,23 @@ function App() {
                     <Route path="/monthly-expenses" element={<MonthlyExpenses />} />
                   </>
                 )}
-              </Routes>
+              </Routes> */}
+              <Routes>
+  {!user ? (
+    <Route path="/" element={<FirstPage />} />
+  ) : (
+    <>
+      {/* Добавим маршрут "/" с редиректом на /home */}
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/debts" element={<Debts />} />
+      <Route path="/earnings" element={<Earnings />} />
+      <Route path="/credits" element={<Credits />} />
+      <Route path="/expenses" element={<Expenses />} />
+      <Route path="/monthly-expenses" element={<MonthlyExpenses />} />
+    </>
+  )}
+</Routes>
             </Content>
           </Layout>
         </Layout>
